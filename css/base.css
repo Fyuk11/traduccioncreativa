@@ -1,0 +1,83 @@
+/* ------------------------
+   BASE / TOKENS
+------------------------ */
+:root {
+  /* Paleta minimal elegante */
+  --color-primary: #c9a94d;   /* Dorado principal */
+  --color-secondary: #c0c0c0; /* Plateado */
+  --color-accent: #ffd700;    /* Dorado brillante */
+  --color-dark: #0a0a0a;      /* Negro profundo */
+  --color-light: #f5f5f5;     /* Blanco cálido */
+
+  /* Neutros */
+  --ink: #111827;             /* Texto oscuro para fondos claros */
+  --muted: #9ca3af;           /* Texto secundario */
+
+  /* Efectos */
+  --shadow-sm: 0 4px 12px rgba(0,0,0,.08);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.20);
+  --radius: 14px;
+  --transition: all .3s ease;
+
+  /* Tipografía */
+  --font-main: "Poppins", "SF Pro Display", -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-main);
+  background: var(--color-dark); /* Ojo: esto NO tapa el video si el hero-video está con position:absolute */
+  color: var(--color-light);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container { width: 90%; max-width: 1200px; margin-inline: auto; }
+
+/* Tipografía base */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-light);
+}
+
+p {
+  font-weight: 400;
+  color: #d1d5db;
+}
+
+/* Utilidades */
+.section { padding: 5.5rem 0; }
+.bg-light { background: #f8fafc; }
+.bg-light * { color: var(--ink); }
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px,1px,1px,1px);
+  padding: 0; border: 0;
+  height: 1px; width: 1px;
+  overflow: hidden;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  border: 2px solid var(--color-primary);
+  color: var(--color-light);
+  background: transparent;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--color-primary);
+  color: var(--color-dark);
+  box-shadow: var(--shadow-sm);
+}

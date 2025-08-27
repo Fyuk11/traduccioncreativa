@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rodrigo Gomez | Desarrollo Web Profesional</title>
+  <meta name="description" content="Desarrollo de landings y portafolios de alto rendimiento: diseño moderno, SEO técnico y performance.">
+  <meta name="author" content="Rodrigo Gomez">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rodrigo Gomez - Desarrollo Web Profesional">
+  <meta property="og:description" content="Landings y portafolios listos para convertir. SEO, performance y diseño premium.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tudominio.com/">
+  <meta property="og:image" content="https://tudominio.com/assets/img/preview.jpg">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="seo/manifest.json">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+<header class="navbar">
+  <div class="nav-container">
+
+    <!-- Logo -->
+    <a href="#" class="logo">Rodri<span>Gómez</span></a>
+
+    <!-- Links Desktop -->
+    <nav class="nav-links">
+       <a href="#hero">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#faq">FAQs</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="btn-nav desktop-only">Trabajemos juntos</a>
+    </nav>
+
+    <!-- Botón Hamburguesa -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+  <!-- Overlay + Mobile Menu -->
+  <div class="mobile-overlay" id="mobile-overlay">
+    <div class="mobile-menu">
+      <nav>
+        <a href="#hero">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="btn-nav">Trabajemos juntos</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+  <!-- HERO -->
+<section id="hero" class="hero">
+  <!-- Video background -->
+  <video autoplay muted loop playsinline poster="/assets/video/poster.jpg">
+    <source src="/assets/video/tu-video.webm" type="video/webm">
+    <source src="/assets/video/tu-video.mp4" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+  </video>
+
+  <!-- Overlay animado -->
+  <div class="hero-overlay"></div>
+
+  <!-- Contenido -->
+  <div class="hero-content">
+    <h1><span>Tu Nombre</span><br>Diseño & Desarrollo Web</h1>
+    <p>Experiencias digitales minimalistas y profesionales para tu marca.</p>
+    <a href="#contacto" class="btn-hero">Trabajemos juntos</a>
+  </div>
+</section>
+
+
+<!-- SOBRE MÍ -->
+<section id="sobre" class="section about" aria-labelledby="title-sobre">
+  <div class="container">
+    <p class="section-kicker" data-aos="fade-up">Sobre mí</p>
+    <h2 id="title-sobre" class="section-title" data-aos="fade-up" data-aos-delay="60">
+      Diseño y desarrollo <span class="gold">sitios rápidos, elegantes</span> y listos para convertir.
+    </h2>
+
+    <div class="about-grid">
+      <!-- Columna imagen -->
+      <div class="about-media" data-aos="fade-right" data-aos-delay="100">
+        <img src="assets/img/foto.jpg" alt="Rodrigo Gomez" class="about-photo" />
+      </div>
+
+      <!-- Columna texto -->
+      <div class="about-copy" data-aos="fade-left" data-aos-delay="140">
+        <p class="lead">
+          Creo landings y portafolios minimalistas, con foco en performance, SEO técnico y una
+          experiencia clara que guía a la acción.
+        </p>
+
+        <!-- Bullets destacados -->
+<ul class="bullets gold-bullets">
+  <li>
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M13 2L3 14h7v8l11-12h-7z"/>
+    </svg>
+    Arquitectura orientada a conversión
+  </li>
+  <li>
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M11 4a7 7 0 1 0 4.9 12l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 11 4z"/>
+    </svg>
+    SEO on-page y buenas prácticas desde el código
+  </li>
+  <li>
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="7" y="2" width="10" height="20" rx="2" ry="2"/>
+      <circle cx="12" cy="18" r="1"/>
+    </svg>
+    Mobile-first y accesibilidad
+  </li>
+</ul>
+
+        <!-- Stats de confianza -->
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-num">90+</span>
+            <span class="stat-label">Puntuación Lighthouse</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">7-14d</span>
+            <span class="stat-label">Entrega típica</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Código entregado</span>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="cta-row">
+          <a href="#servicios" class="btn">Ver servicios</a>
+          <a href="#contacto" class="btn-secondary">Solicitar propuesta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- SERVICIOS -->
+<section id="servicios" class="section bg-light" aria-labelledby="title-servicios">
+  <div class="container">
+    <p class="section-kicker" data-aos="fade-up">Lo que ofrezco</p>
+    <h2 id="title-servicios" class="section-title" data-aos="fade-up" data-aos-delay="60">
+      Servicios <span class="gold">clave</span> para tu proyecto
+    </h2>
+
+    <div class="grid-3">
+      <!-- Card 1 -->
+      <article class="card" data-aos="fade-up">
+        <div class="card-header">
+          <!-- Ícono SVG dorado -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h10" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="badge">Performance</span>
+        </div>
+        <h3>Landing Pages</h3>
+        <p>Diseños enfocados en conversión, tiempos de carga mínimos y estructura orientada a SEO.</p>
+        <a href="#contacto" class="btn-cta" aria-label="Pedir landing">Pedir landing</a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-header">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="7" r="4" stroke="#d4af37" stroke-width="2"/>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="badge">Marca personal</span>
+        </div>
+        <h3>Portafolios</h3>
+        <p>Mostrá tu trabajo con un portfolio elegante, ordenado y 100% responsive.</p>
+        <a href="#contacto" class="btn-cta" aria-label="Crear portafolio">Crear portafolio</a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-header">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 4h16v12H4z" stroke="#d4af37" stroke-width="2"/>
+            <path d="M2 20h20" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="badge">SEO técnico</span>
+        </div>
+        <h3>Optimización & SEO</h3>
+        <p>Mejoras de velocidad, etiquetado correcto, metadatos y buenas prácticas on-page.</p>
+        <a href="#contacto" class="btn-cta" aria-label="Optimizar sitio">Optimizar mi sitio</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROYECTOS -->
+<section id="proyectos" class="section" aria-labelledby="title-proyectos" data-aos="fade-up">
+  <div class="container">
+    <h2 id="title-proyectos" class="section-title">Proyectos</h2>
+
+    <div class="swiper proyectos-swiper">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="project-slide">
+            <div class="project-media">
+              <img src="assets/img/proyecto1.webp" alt="Landing Corporativa" />
+            </div>
+            <div class="project-info">
+              <h3>Landing Corporativa barbería</h3>
+              <p>Arquitectura clara, foco en leads y contenido escaneable.</p>
+              <a href="https://portafolio-barberiapro.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">Ver demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="project-slide">
+            <div class="project-media">
+              <img src="assets/img/proyecto2.webp" alt="Portafolio Creativo" />
+            </div>
+            <div class="project-info">
+              <h3>Portafolio Agencia de marketing</h3>
+              <p>Galería visual, narrativa y CTA consistente.</p>
+              <a href="https://vayune.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">Ver demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="project-slide">
+            <div class="project-media">
+              <img src="assets/img/proyecto3.webp" alt="Landing Producto" />
+            </div>
+            <div class="project-info">
+              <h3>Landing Local de comidas</h3>
+              <p>Sección de features, beneficios y testimonios.</p>
+              <a href="https://veggie-life-site.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">Ver demo</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+  <!-- TESTIMONIOS (opcional pero suma confianza) -->
+  <section id="testimonios" class="section bg-light" aria-labelledby="title-testimonios">
+    <div class="container">
+      <h2 id="title-testimonios" class="section-title">Testimonios</h2>
+      <div class="grid-3">
+        <blockquote class="card" data-aos="fade-up">
+          <p>“La landing que nos hizo Rodrigo duplicó los leads en dos semanas.”</p>
+          <footer style="margin-top:.8rem;color:#6b7280;">— Cliente A</footer>
+        </blockquote>
+        <blockquote class="card" data-aos="fade-up" data-aos-delay="120">
+          <p>“Excelente comunicación y resultados. Sitio rápido y bien optimizado.”</p>
+          <footer style="margin-top:.8rem;color:#6b7280;">— Cliente B</footer>
+        </blockquote>
+        <blockquote class="card" data-aos="fade-up" data-aos-delay="240">
+          <p>“Volvería a contratarlo. Se nota el cuidado por los detalles.”</p>
+          <footer style="margin-top:.8rem;color:#6b7280;">— Cliente C</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section id="faqs" class="section" aria-labelledby="title-faqs">
+    <div class="container">
+      <h2 id="title-faqs" class="section-title">Preguntas frecuentes</h2>
+
+      <!-- Acordeón con <details> (sin JS extra) -->
+      <div class="grid-2" data-aos="fade-up">
+        <details class="card">
+          <summary style="cursor:pointer;font-weight:600;">¿Cuál es el tiempo de entrega?</summary>
+          <p style="margin-top:.8rem;">Una landing estándar entre 5 y 10 días. Portafolio entre 7 y 14 días (según contenido).</p>
+        </details>
+
+        <details class="card">
+          <summary style="cursor:pointer;font-weight:600;">¿Incluye SEO?</summary>
+          <p style="margin-top:.8rem;">Sí, implemento SEO técnico base: metadatos, estructura, performance y buenas prácticas on-page.</p>
+        </details>
+
+        <details class="card">
+          <summary style="cursor:pointer;font-weight:600;">¿Cómo es la forma de pago?</summary>
+          <p style="margin-top:.8rem;">50% anticipo y 50% a la entrega. Emito factura y entrego todo el código fuente.</p>
+        </details>
+
+        <details class="card">
+          <summary style="cursor:pointer;font-weight:600;">¿Puedo pedir cambios?</summary>
+          <p style="margin-top:.8rem;">Incluye una ronda de ajustes. Cambios adicionales se cotizan según alcance.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+<!-- SEPARADOR CTA -->
+<section id="cta" class="cta-section">
+  <video autoplay muted loop playsinline class="cta-video" poster="/assets/video/poster.jpg">
+    <source src="/assets/video/tu-video.webm" type="video/webm">
+    <source src="/assets/video/tu-video.mp4" type="video/mp4">
+  </video>
+  <div class="cta-overlay"></div>
+  <div class="cta-content" data-aos="fade-up">
+    <h2>¿Listo para llevar tu presencia online al próximo nivel?</h2>
+    <p>Contame tu idea y empecemos a crear juntos.</p>
+    <a href="#contacto" class="btn-cta">Contactame</a>
+  </div>
+</section>
+
+
+
+<!-- CONTACTO -->
+<section id="contacto" class="section bg-light" aria-labelledby="title-contacto">
+  <div class="container">
+    <h2 id="title-contacto" class="section-title">Contacto</h2>
+    <form id="contact-form" class="form" data-aos="fade-up" data-aos-delay="150">
+      <input type="text" name="name" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu email" required />
+<input 
+  type="tel" 
+  id="phone" 
+  name="phone" 
+  placeholder="Tu teléfono" 
+  required
+  pattern="[0-9+\s-]{8,15}" 
+  title="Por favor ingresa un teléfono válido (solo números, +, - y espacios, entre 8 y 15 caracteres)."
+/>
+      <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+      <button type="submit" class="btn-cta">Enviar</button>
+      <p id="form-status" class="form-status"></p>
+    </form>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container footer">
+
+    <!-- Barra superior -->
+    <div class="footer-top">
+      <!-- Logo / Marca -->
+      <div class="footer-brand">
+        <a href="#hero" class="brand">Rodrigo Gomez</a>
+      </div>
+
+      <!-- Navegación footer -->
+      <nav class="footer-nav" aria-label="Navegación de pie de página">
+        <a href="#hero">Inicio</a> 
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="cta-link">¡Hablemos!</a>
+      </nav>
+
+      <!-- Redes sociales -->
+      <div class="redes" aria-label="Redes sociales">
+        <a href="#" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="#" rel="noopener" target="_blank">GitHub</a>
+        <a href="#" rel="noopener" target="_blank">Instagram</a>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Copy -->
+    <p class="copy">© 2025 Rodrigo Gomez — Todos los derechos reservados</p>
+  </div>
+</footer>
+
+
+
+  <!-- Botones flotantes -->
+<!-- Botón WhatsApp -->
+<a href="https://wa.me/XXXXXXXXXXX" class="btn-whatsapp" aria-label="Chatear por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M20.52 3.48A11.88 11.88 0 0012.04 0C5.39 0 .04 5.34.04 11.96c0 2.11.55 4.17 1.6 5.97L0 24l6.3-1.64a11.94 11.94 0 005.73 1.46h.01c6.65 0 12.01-5.35 12.01-11.96a11.88 11.88 0 00-3.53-8.38zM12.04 22a9.94 9.94 0 01-5.07-1.38l-.36-.21-3.74.97 1-3.64-.24-.37a9.9 9.9 0 01-1.58-5.41c0-5.46 4.46-9.91 9.99-9.91 2.67 0 5.17 1.04 7.05 2.92a9.89 9.89 0 012.93 7c0 5.46-4.46 9.92-9.98 9.92zm5.52-7.47c-.3-.15-1.77-.87-2.04-.96-.27-.1-.47-.15-.67.15-.2.3-.77.95-.95 1.15-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.67-1.61-.92-2.21-.24-.58-.5-.5-.67-.5h-.57c-.2 0-.52.08-.8.38-.27.3-1.04 1.01-1.04 2.47 0 1.45 1.07 2.85 1.22 3.05.15.2 2.1 3.33 5.1 4.68.71.3 1.27.48 1.7.61.71.22 1.35.19 1.85.12.56-.08 1.77-.72 2.02-1.41.25-.68.25-1.27.17-1.41-.07-.15-.27-.22-.57-.37z"/>
+  </svg>
+</a>
+
+<!-- Botón Scroll to Top -->
+<a href="#hero" class="btn-top" aria-label="Volver arriba">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 2L4 10h5v8h6v-8h5L12 2z"/>
+  </svg>
+</a>
+
+
+  <!-- Libs externas -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- JS propios -->
+  <script src="js/typed.js"></script>
+  <script src="js/aos-init.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
