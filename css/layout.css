@@ -209,6 +209,15 @@
 /* ===========================
    HERO SECTION (Mobile First)
 =========================== */
+/* ===========================
+   HERO SECTION (Mobile First)
+=========================== */
+/* ===========================
+   HERO SECTION (Mobile First)
+=========================== */
+/* ===========================
+   HERO SECTION (Mobile First)
+=========================== */
 .hero {
   position: relative;
   min-height: 100vh; /* en mobile mejor auto que fijo */
@@ -369,6 +378,7 @@
     transform: translateY(0);
   }
 }
+
 
 
 /* ------------------------
@@ -1020,77 +1030,53 @@ footer {
 /* CTA efecto agua flameante */
 /* CTA efecto lava/fuego */
 /* --- Hero typewriter --- */
-.hero-content h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-}
-
-.hero-content h1 span,
-.hero-content p {
-  opacity: 0;
-}
-
-.creativa {
-  display: inline-block;
-  background: linear-gradient(90deg, #ff4d4d, #ffcc00, #33ccff, #ff66ff);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: colorFlow 5s ease infinite;
-}
-
-@keyframes colorFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  width: 2px;
-  background: #fff;
-  animation: blink 0.8s infinite;
-  vertical-align: middle;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-
-.hero-content {
+/* HERO (solo lo mínimo necesario para el typing) */
+/*.hero-content {
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Reservamos espacio desde el inicio */
-#hero h1, 
-#hero p {
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
   color: #fff;
-  visibility: hidden; 
-  white-space: pre-wrap; /* respeta saltos de línea */
+}
+.hero-content p { color: #fff; }
+
+/* Reservamos espacio sin ocultar con ancestor hidden *
+.type-line {
+  display: block;
+  position: relative;
+  visibility: visible; /* obligatorio: no ocultar por ancestros *
+  white-space: pre-wrap;
 }
 
-/* Cursor */
+/* Pseudo-elemento invisible que ocupa lugar y evita salto del layout *
+.type-line::before {
+  content: attr(data-full);
+  visibility: hidden;   /* ocupa lugar pero no se ve *
+  white-space: pre-wrap;
+  display: block;
+}
+
+/* Cursor *
 .cursor {
   display: inline-block;
   width: 2px;
+  height: 1em;
   background: #fff;
-  margin-left: 2px;
+  margin-left: 6px;
+  vertical-align: -0.05em;
   animation: blink 0.8s infinite;
-  vertical-align: middle;
 }
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
 
-/* Palabra creativa animada */
+/* Palabra "Creativa" con degradado animado *
 .creativa {
   display: inline-block;
   background: linear-gradient(90deg, #ff4d4d, #ffcc00, #33ccff, #ff66ff);
@@ -1105,7 +1091,7 @@ footer {
   100% { background-position: 0% 50%; }
 }
 
-/* Botón oculto al inicio */
+/* Botón oculto al inicio y aparecerá al final *
 .btn-hero {
   opacity: 0;
   transform: translateY(10px);
@@ -1115,3 +1101,5 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+*/
