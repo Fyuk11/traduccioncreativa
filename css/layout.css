@@ -52,7 +52,7 @@
 }
 
 /* CTA */
-.btn-nav {
+/*.btn-nav {
   background: linear-gradient(45deg, #d4af37, #a37e2c);
   color: #fff;
   padding: 0.6rem 1.2rem;
@@ -64,7 +64,36 @@
 .btn-nav:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}*//* CTA con efecto de ondas */
+.btn-nav {
+  background: linear-gradient(
+    135deg,
+    #d4af37 25%,
+    #a37e2c 50%,
+    #d4af37 75%
+  );
+  background-size: 200% 200%;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all .3s ease;
+  text-decoration: none;
+  animation: waveMove 6s ease-in-out infinite;
 }
+
+.btn-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+/* Animación sutil de ondas */
+@keyframes waveMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 .nav-links a,
 .btn-nav,
@@ -974,4 +1003,62 @@ footer {
 
 .footer-nav .cta-link {
   animation: gradientMove 3s linear infinite, glow 2s ease-in-out infinite alternate;
+}
+
+
+
+/* ACTUALIZACIONES*/
+
+/* CTA con efecto de ondas más creativo */
+/* CTA con efecto de ondas animadas */
+/* CTA con efecto agua */
+/* CTA efecto lava/fuego */
+/* CTA efecto agua flameante */
+/* CTA efecto lava/fuego */
+.btn-nav {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #d4af37, #a37e2c);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all .3s ease;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.btn-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    -45deg,
+    rgba(255, 204, 0, 0.4),
+    rgba(255, 100, 0, 0.35),
+    rgba(255, 0, 0, 0.3),
+    rgba(255, 100, 0, 0.35),
+    rgba(255, 204, 0, 0.4)
+  );
+  background-size: 400% 400%;
+  animation: lavaFlow 6s ease-in-out infinite;
+  mix-blend-mode: screen; /* se mezcla con el dorado */
+  z-index: 0;
+}
+
+.btn-nav span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+/* animación tipo fuego/lava */
+@keyframes lavaFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

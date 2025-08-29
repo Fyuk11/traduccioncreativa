@@ -2,17 +2,17 @@
    COMPONENTS (reutilizables)
 ------------------------ */
 
-/* BOTONES */
+/* BOTONES *
 .btn,.btn-cta,.btn-nav{
   display:inline-block;cursor:pointer;border:none;
   padding:.9rem 1.6rem;border-radius:999px;font-weight:600;
   transition:var(--transition);transform:translateZ(0);
-}
+} /*
 .btn,.btn-cta{color:#fff;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary))}
 .btn:hover,.btn-cta:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(37,99,235,.25)}
 .btn-nav{background:var(--color-accent);color:#1f2937}
 .btn-nav:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(250,204,21,.25)}
-
+*/
 
 /* FORMULARIO */
 .form {
