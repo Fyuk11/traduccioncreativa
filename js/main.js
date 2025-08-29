@@ -104,3 +104,31 @@ const swiperProyectos = new Swiper('.proyectos-swiper', {
     clickable: true,
   },
 });
+
+
+// seccion cta cambio de palabra
+const words = document.querySelectorAll(".dynamic-word");
+let current = 0;
+
+// Inicializamos la primera palabra
+words[current].classList.add("active");
+
+function rotateWords() {
+  const prev = current;
+  
+  // Desaparece hacia abajo con blur
+  words[prev].classList.remove("active");
+  words[prev].classList.add("leave");
+
+  // Próxima palabra
+  current = (current + 1) % words.length;
+  words[current].classList.add("active");
+
+  // Limpiar clase leave después de la transición
+  setTimeout(() => {
+    words[prev].classList.remove("leave");
+  }, 600); // mismo tiempo que la transición
+}
+
+// Repetir cada 3 segundos
+setInterval(rotateWords, 4000);

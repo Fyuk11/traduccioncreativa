@@ -1165,6 +1165,66 @@
   transform: scale(1.05);
 }
 
+/* Palabras dinámicas fade */
+/* Palabras dinámicas con transición clara */
+.dynamic-word {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  color: #d4af37; /* dorado */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.dynamic-word.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative; /* se mantiene en flujo del texto */
+}
+
+/*probando algo*/
+.cta-h2 {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.dynamic-wrapper {
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  height: 1.2em; /* mantiene espacio del texto */
+  overflow: hidden;
+}
+
+.dynamic-word {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: translateY(-50px);
+  filter: blur(2px);
+  transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
+}
+
+.dynamic-word.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.dynamic-word.leave {
+  opacity: 0;
+  transform: translateY(150px); /* ahora cae más */
+  filter: blur(8px);            /* más desenfoque al caer */
+}
+
+
+
+
+
+
+
 
 /* ------------------------
    FOOTER
