@@ -488,6 +488,8 @@
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
+  word-break: break-word; /* para que no se corte texto en móviles */
+  color: #d4af37;
 }
 
 .hero-content p {
@@ -532,7 +534,7 @@
 /* ===========================
    TYPING EFFECT
 =========================== */
-.type-line {
+/*.type-line {
   display: inline-block;
   white-space: pre;
   overflow: hidden;
@@ -547,6 +549,25 @@
   0%,50% { border-color: #fff; }
   51%,100% { border-color: transparent; }
 }
+*/
+/* Typing cursor */
+.type-line {
+  display: inline-block;
+  white-space: pre-wrap; /* permite saltos de línea si es necesario */
+  overflow: hidden;
+}
+
+.type-line.typing {
+  border-right: 2px solid #fff; /* solo cuando está escribiendo */
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  0%,50% { border-color: #fff; }
+  51%,100% { border-color: transparent; }
+}
+
+
 
 /* Gradiente animado para creativa */
 .creativa {
