@@ -1236,6 +1236,20 @@
     top: 0;
   }
 }
+/* Desktop grande / pantallas XL */
+@media (min-width: 1200px) {
+  .dynamic-wrapper {
+    height: 2.2em;       /* más espacio para las letras grandes */
+    line-height: 2.2em;  /* centra verticalmente */
+  }
+}
+
+@media (min-width: 1600px) {
+  .dynamic-wrapper {
+    height: 2.6em;       /* ajuste extra para monitores muy grandes */
+    line-height: 2.6em;
+  }
+}
 
 
 
