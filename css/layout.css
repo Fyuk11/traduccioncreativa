@@ -218,9 +218,9 @@
 /* ===========================
    HERO SECTION (Mobile First)
 =========================== */
-.hero {
+/*.hero {
   position: relative;
-  min-height: 100vh; /* en mobile mejor auto que fijo */
+  min-height: 100vh; /* en mobile mejor auto que fijo *
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,7 +230,7 @@
   padding: 0 1rem;
 }
 
-/* Video de fondo */
+/* Video de fondo *
 .hero video {
   position: absolute;
   inset: 0;
@@ -241,7 +241,7 @@
   filter: brightness(0.75);
 }
 
-/* Overlay oscuro base */
+/* Overlay oscuro base *
 .hero::before {
   content: "";
   position: absolute;
@@ -250,7 +250,7 @@
   background: rgba(10, 10, 10, 0.55);
 }
 
-/* Overlay dorado/plateado animado */
+/* Overlay dorado/plateado animado *
 .hero::after {
   content: "";
   position: absolute;
@@ -258,8 +258,8 @@
   z-index: -1;
   background: linear-gradient(
     270deg,
-    rgba(212,175,55,0.18),  /* dorado */
-    rgba(192,192,192,0.10), /* plateado */
+    rgba(212,175,55,0.18),  /* dorado *
+    rgba(192,192,192,0.10), /* plateado *
     rgba(212,175,55,0.18)
   );
   background-size: 400% 400%;
@@ -267,14 +267,14 @@
   animation: shimmer 20s ease infinite;
 }
 
-/* Animación overlay */
+/* Animación overlay *
 @keyframes shimmer {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Contenido */
+/* Contenido *
 .hero-content {
   position: relative;
   z-index: 10;
@@ -282,9 +282,9 @@
   margin-inline: auto;
 }
 
-/* Título */
+/* Título *
 .hero-content h1 {
-  font-size: 2rem; /* mobile */
+  font-size: 2rem; /* mobile *
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
@@ -293,15 +293,15 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Texto */
+/* Texto *
 .hero-content p {
-  font-size: 1rem; /* mobile */
+  font-size: 1rem; /* mobile *
   color: #dcdcdc;
   margin-bottom: 1.5rem;
   font-weight: 300;
 }
 
-/* Botón */
+/* Botón *
 .hero-content .btn-hero {
   display: inline-block;
   border: 2px solid var(--color-accent);
@@ -326,7 +326,7 @@
    MEDIA QUERIES
 =========================== */
 
-/* Tablet */
+/* Tablet *
 @media (min-width: 640px) {
   .hero-content h1 {
     font-size: 2.5rem;
@@ -342,7 +342,7 @@
   }
 }
 
-/* Desktop */
+/* Desktop *
 @media (min-width: 1024px) {
   .hero-content h1 {
     font-size: 3.5rem;
@@ -367,9 +367,9 @@
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  opacity: 0;                 /* inicial */
-  transform: translateY(20px);/* inicia más abajo */
-  animation: fadeUp 1.2s ease forwards 1.2s; /* aparece con delay */
+  opacity: 0;                 /* inicial *
+  transform: translateY(20px);/* inicia más abajo *
+  animation: fadeUp 1.2s ease forwards 1.2s; /* aparece con delay *
 }
 
 @keyframes fadeUp {
@@ -378,6 +378,193 @@
     transform: translateY(0);
   }
 }
+
+/* Animación de color para "creativa" *
+.type-line {
+  display: inline-block;
+  white-space: pre;
+  overflow: hidden;
+  border-right: 2px solid #fff; /* cursor *
+}
+
+/* Parpadeo cursor *
+@keyframes blink {
+  0%, 50% { border-color: #fff; }
+  51%, 100% { border-color: transparent; }
+}
+
+.type-line.typing {
+  animation: blink 1s step-start infinite;
+}
+
+/* Animación de color para "creativa" *
+.creativa {
+  display: inline-block;
+  background: linear-gradient(90deg, #d4af37, #ffcc00, #33ccff, #ff66ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorFlow 5s ease infinite;
+}
+
+@keyframes colorFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+*/
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: var(--color-light);
+  padding: 0 1rem;
+}
+
+/* Video y overlays */
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+  filter: brightness(0.75);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: rgba(10,10,10,0.55);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    270deg,
+    rgba(212,175,55,0.18),
+    rgba(192,192,192,0.10),
+    rgba(212,175,55,0.18)
+  );
+  background-size: 400% 400%;
+  mix-blend-mode: screen;
+  animation: shimmer 20s ease infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Contenido centrado y responsive */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tipografía */
+.hero-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  color: #dcdcdc;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+/* Botón */
+.hero-content .btn-hero {
+  display: inline-block;
+  border: 2px solid var(--color-accent);
+  background: linear-gradient(45deg, #d4af37, #a37e2c);
+  color: white;
+  border-radius: 30px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.hero-content .btn-hero:hover {
+  background: var(--color-accent);
+  color: var(--color-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content p { font-size: 1.1rem; }
+}
+
+@media (min-width: 1024px) {
+  .hero-content h1 { font-size: 3.5rem; }
+  .hero-content p { font-size: 1.25rem; }
+}
+
+/* ===========================
+   TYPING EFFECT
+=========================== */
+.type-line {
+  display: inline-block;
+  white-space: pre;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+}
+
+.type-line.typing {
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  0%,50% { border-color: #fff; }
+  51%,100% { border-color: transparent; }
+}
+
+/* Gradiente animado para creativa */
+.creativa {
+  display: inline-block;
+  background: linear-gradient(90deg, #d4af37, #ffcc00, #33ccff, #ff66ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorFlow 5s ease infinite;
+}
+
+@keyframes colorFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
 
 
 
