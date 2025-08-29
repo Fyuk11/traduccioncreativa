@@ -1189,12 +1189,16 @@
   font-size: 2rem;
 }
 
+
+/* Ajuste general ya aplicado */
 .dynamic-wrapper {
   position: relative;
   display: inline-block;
   width: max-content;
-  height: 1.2em; /* mantiene espacio del texto */
+  height: 1.6em; /* desktop */
+  line-height: 1.6em; /* centra verticalmente las palabras */
   overflow: hidden;
+  vertical-align: middle; /* opcional, ayuda en inline */
 }
 
 .dynamic-word {
@@ -1202,22 +1206,37 @@
   left: 0;
   top: 0;
   opacity: 0;
-  transform: translateY(-50px);
+  transform: translateY(-60px) rotateZ(-5deg);
   filter: blur(2px);
-  transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
+  transition: opacity 1s ease, transform 1s ease, filter 1s ease;
 }
 
+/* Entrada activa */
 .dynamic-word.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) rotateZ(0deg);
   filter: blur(0);
 }
 
+/* Salida tipo “caída” */
 .dynamic-word.leave {
   opacity: 0;
-  transform: translateY(150px); /* ahora cae más */
-  filter: blur(8px);            /* más desenfoque al caer */
+  transform: translateY(150px) rotateZ(15deg);
+  filter: blur(8px);
 }
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .dynamic-wrapper {
+    height: 1.4em;  /* altura para descenders en mobile */
+    line-height: 1.25em; /* centra verticalmente */
+  }
+
+  .dynamic-word {
+    top: 0;
+  }
+}
+
 
 
 
