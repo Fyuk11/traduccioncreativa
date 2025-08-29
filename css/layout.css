@@ -95,6 +95,10 @@
 }
 
 
+
+
+
+
 .nav-links a,
 .btn-nav,
 .logo {
@@ -1015,50 +1019,99 @@ footer {
 /* CTA efecto lava/fuego */
 /* CTA efecto agua flameante */
 /* CTA efecto lava/fuego */
-.btn-nav {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(45deg, #d4af37, #a37e2c);
+/* --- Hero typewriter --- */
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
   color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: all .3s ease;
-  text-decoration: none;
-  z-index: 1;
+  line-height: 1.2;
 }
 
-.btn-nav::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    -45deg,
-    rgba(255, 204, 0, 0.4),
-    rgba(255, 100, 0, 0.35),
-    rgba(255, 0, 0, 0.3),
-    rgba(255, 100, 0, 0.35),
-    rgba(255, 204, 0, 0.4)
-  );
-  background-size: 400% 400%;
-  animation: lavaFlow 6s ease-in-out infinite;
-  mix-blend-mode: screen; /* se mezcla con el dorado */
-  z-index: 0;
+.hero-content h1 span,
+.hero-content p {
+  opacity: 0;
 }
 
-.btn-nav span {
-  position: relative;
-  z-index: 2;
+.creativa {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff4d4d, #ffcc00, #33ccff, #ff66ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorFlow 5s ease infinite;
 }
 
-.btn-nav:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-}
-
-/* animación tipo fuego/lava */
-@keyframes lavaFlow {
+@keyframes colorFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  width: 2px;
+  background: #fff;
+  animation: blink 0.8s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Reservamos espacio desde el inicio */
+#hero h1, 
+#hero p {
+  color: #fff;
+  visibility: hidden; 
+  white-space: pre-wrap; /* respeta saltos de línea */
+}
+
+/* Cursor */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background: #fff;
+  margin-left: 2px;
+  animation: blink 0.8s infinite;
+  vertical-align: middle;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Palabra creativa animada */
+.creativa {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff4d4d, #ffcc00, #33ccff, #ff66ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorFlow 5s ease infinite;
+}
+@keyframes colorFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Botón oculto al inicio */
+.btn-hero {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.btn-hero.show {
+  opacity: 1;
+  transform: translateY(0);
 }
