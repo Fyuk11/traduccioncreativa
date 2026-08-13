@@ -1206,3 +1206,49 @@ footer {
 }
 
 
+
+
+
+
+/* =========================================
+   FIX TIPOGRAFÍA ELÁSTICA Y DESBORDE (MOBILE)
+========================================= */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Hace que los títulos se achiquen en celulares pero crezcan en monitores */
+.section-title {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important; 
+  padding: 0 1rem;
+  line-height: 1.3;
+}
+
+/* Arreglo específico para el efecto de máquina de escribir en mobile */
+.type-line {
+  white-space: pre-wrap !important; /* Permite que el texto baje a la siguiente línea */
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
+  }
+  
+  /* Le damos respiro a los costados a la sección "Sobre mí / De la chispa..." */
+  #sobre .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Acomodamos los botones flotantes para que no pisen el texto */
+  .btn-whatsapp {
+    bottom: 20px;
+    right: 15px;
+  }
+  .btn-top {
+    bottom: 80px;
+    right: 15px;
+  }
+}
