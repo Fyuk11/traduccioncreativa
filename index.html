@@ -447,25 +447,50 @@
 
 
 
-<!-- CONTACTO -->
+<!-- CONTACTO / PRE-ONBOARDING -->
 <section id="contacto" class="section bg-light" aria-labelledby="title-contacto">
   <div class="container">
-    <h2 id="title-contacto" class="section-title">Contacto</h2>
-    <form id="contact-form" class="form" data-aos="fade-up" data-aos-delay="150">
-      <input type="text" name="name" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu email" required />
-<input 
-  type="tel" 
-  id="phone" 
-  name="phone" 
-  placeholder="Tu teléfono" 
-  required
-  pattern="[0-9+\s-]{8,15}" 
-  title="Por favor ingresa un teléfono válido (solo números, +, - y espacios, entre 8 y 15 caracteres)."
-/>
-      <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
-      <button type="submit" class="btn-cta">Enviar</button>
-      <p id="form-status" class="form-status"></p>
+    <h2 id="title-contacto" class="section-title">¿Listo para escalar tu negocio?</h2>
+    <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+      Completá este breve formulario para entender tu proyecto. Si hacemos <em>match</em>, te armamos una propuesta a medida.
+    </p>
+
+    <form id="qualifier-form" class="form" data-aos="fade-up" data-aos-delay="150">
+      
+      <!-- Paso 1: Datos Básicos -->
+      <div class="form-group">
+        <input type="text" id="leadName" name="name" placeholder="Tu nombre o el de tu marca" required />
+      </div>
+      <div class="form-group">
+        <input type="email" id="leadEmail" name="email" placeholder="Tu email corporativo o principal" required />
+      </div>
+
+      <!-- Paso 2: Preguntas de Cualificación -->
+      <div class="form-group">
+        <select id="leadService" name="service" required style="padding: 1rem; border-radius: 12px; width: 100%; border: 1px solid #d1d5db; background: #f9f9f9; font-family: inherit;">
+          <option value="" disabled selected>¿Qué estás buscando construir?</option>
+          <option value="Landing Page + Embudo">Landing Page + Embudo de Ventas</option>
+          <option value="Sitio Web Corporativo">Sitio Web / Portafolio Corporativo</option>
+          <option value="Ecosistema Completo (Make, Pixel, Web)">Ecosistema Completo (Make + Píxel + Web)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select id="leadBudget" name="budget" required style="padding: 1rem; border-radius: 12px; width: 100%; border: 1px solid #d1d5db; background: #f9f9f9; font-family: inherit;">
+          <option value="" disabled selected>¿Cuál es el presupuesto estimado para este proyecto?</option>
+          <option value="Menos de $300 USD">Menos de $300 USD (Emprendedor)</option>
+          <option value="$300 - $800 USD">$300 - $800 USD (Negocio en crecimiento)</option>
+          <option value="Más de $800 USD">Más de $800 USD (Escala Corporativa)</option>
+        </select>
+      </div>
+
+      <!-- Paso 3: Detalles Extras -->
+      <div class="form-group">
+        <textarea id="leadDetails" name="details" rows="3" placeholder="Contame un poco más sobre tu negocio y tu objetivo principal..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-cta w-100">Solicitar Propuesta Estratégica</button>
+      <p id="qualifier-status" class="form-status" style="text-align: center; margin-top: 1rem;"></p>
     </form>
   </div>
 </section>

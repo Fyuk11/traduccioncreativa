@@ -1252,3 +1252,41 @@ html, body {
     right: 15px;
   }
 }
+
+
+
+
+
+/* =========================================
+   FIX OVERLAP Y ALTURA EN SECCIONES CTA (MOBILE)
+========================================= */
+.cta-section {
+    height: auto !important; /* Rompemos la atadura de los 50vh fijos */
+    min-height: 60vh; /* Que mida al menos el 60% de la pantalla, pero que crezca si el texto lo necesita */
+    padding: 5rem 1rem !important; /* Le damos mucho aire arriba y abajo */
+    margin-top: 2rem; /* Separación de seguridad con la sección anterior */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Aseguramos que el video de fondo cubra la nueva altura dinámica */
+.cta-video {
+    height: 100% !important;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+/* Ajuste de márgenes internos para celulares */
+@media (max-width: 768px) {
+    .cta-content {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    /* Separación extra para el botón del E-book y Contacto */
+    .cta-content .btn-cta {
+        margin-top: 1.5rem;
+        display: inline-block;
+    }
+}
