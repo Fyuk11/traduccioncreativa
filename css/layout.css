@@ -51,20 +51,7 @@
   color: var(--color-accent);
 }
 
-/* CTA */
-/*.btn-nav {
-  background: linear-gradient(45deg, #d4af37, #a37e2c);
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: all .3s ease;
-  text-decoration: none;
-}
-.btn-nav:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-}*//* CTA con efecto de ondas */
+
 .btn-nav {
   background: linear-gradient(
     135deg,
@@ -206,214 +193,7 @@
 }
 
 
-/* ===========================
-   HERO SECTION (Mobile First)
-=========================== */
-/* ===========================
-   HERO SECTION (Mobile First)
-=========================== */
-/* ===========================
-   HERO SECTION (Mobile First)
-=========================== */
-/* ===========================
-   HERO SECTION (Mobile First)
-=========================== */
-/*.hero {
-  position: relative;
-  min-height: 100vh; /* en mobile mejor auto que fijo *
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  color: var(--color-light);
-  padding: 0 1rem;
-}
 
-/* Video de fondo *
-.hero video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -3;
-  filter: brightness(0.75);
-}
-
-/* Overlay oscuro base *
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background: rgba(10, 10, 10, 0.55);
-}
-
-/* Overlay dorado/plateado animado *
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    270deg,
-    rgba(212,175,55,0.18),  /* dorado *
-    rgba(192,192,192,0.10), /* plateado *
-    rgba(212,175,55,0.18)
-  );
-  background-size: 400% 400%;
-  mix-blend-mode: screen;
-  animation: shimmer 20s ease infinite;
-}
-
-/* Animación overlay *
-@keyframes shimmer {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Contenido *
-.hero-content {
-  position: relative;
-  z-index: 10;
-  max-width: 700px;
-  margin-inline: auto;
-}
-
-/* Título *
-.hero-content h1 {
-  font-size: 2rem; /* mobile *
-  font-weight: 700;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-  background: linear-gradient(90deg, #f5f5f5, #d4af37);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Texto *
-.hero-content p {
-  font-size: 1rem; /* mobile *
-  color: #dcdcdc;
-  margin-bottom: 1.5rem;
-  font-weight: 300;
-}
-
-/* Botón *
-.hero-content .btn-hero {
-  display: inline-block;
-  border: 2px solid var(--color-accent);
-  background: transparent;
-  color: var(--color-light);
-  border-radius: 30px;
-  padding: 0.7rem 1.4rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: var(--transition);
-  text-decoration: none;
-}
-
-.hero-content .btn-hero:hover {
-  background: var(--color-accent);
-  color: var(--color-dark);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
-}
-
-/* ===========================
-   MEDIA QUERIES
-=========================== */
-
-/* Tablet *
-@media (min-width: 640px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1.1rem;
-  }
-
-  .hero-content .btn-hero {
-    font-size: 1rem;
-    padding: 0.8rem 1.8rem;
-  }
-}
-
-/* Desktop *
-@media (min-width: 1024px) {
-  .hero-content h1 {
-    font-size: 3.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-
-  .hero-content .btn-hero {
-    font-size: 1.1rem;
-    padding: 1rem 2.2rem;
-  }
-}
-
-.hero-content .btn-hero {
-  background: linear-gradient(45deg, #d4af37, #a37e2c);
-  color: white;
-  border-radius: 30px;
-  padding: 0.8rem 1.8rem;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  opacity: 0;                 /* inicial *
-  transform: translateY(20px);/* inicia más abajo *
-  animation: fadeUp 1.2s ease forwards 1.2s; /* aparece con delay *
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animación de color para "creativa" *
-.type-line {
-  display: inline-block;
-  white-space: pre;
-  overflow: hidden;
-  border-right: 2px solid #fff; /* cursor *
-}
-
-/* Parpadeo cursor *
-@keyframes blink {
-  0%, 50% { border-color: #fff; }
-  51%, 100% { border-color: transparent; }
-}
-
-.type-line.typing {
-  animation: blink 1s step-start infinite;
-}
-
-/* Animación de color para "creativa" *
-.creativa {
-  display: inline-block;
-  background: linear-gradient(90deg, #d4af37, #ffcc00, #33ccff, #ff66ff);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: colorFlow 5s ease infinite;
-}
-
-@keyframes colorFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-*/
 /* ===========================
    HERO SECTION
 =========================== */
@@ -531,25 +311,7 @@
   .hero-content p { font-size: 1.25rem; }
 }
 
-/* ===========================
-   TYPING EFFECT
-=========================== */
-/*.type-line {
-  display: inline-block;
-  white-space: pre;
-  overflow: hidden;
-  border-right: 2px solid #fff;
-}
 
-.type-line.typing {
-  animation: blink 1s step-start infinite;
-}
-
-@keyframes blink {
-  0%,50% { border-color: #fff; }
-  51%,100% { border-color: transparent; }
-}
-*/
 /* Typing cursor */
 .type-line {
   display: inline-block;
@@ -1406,87 +1168,41 @@ footer {
 
 
 
-/* ACTUALIZACIONES*/
-
-/* CTA con efecto de ondas más creativo */
-/* CTA con efecto de ondas animadas */
-/* CTA con efecto agua */
-/* CTA efecto lava/fuego */
-/* CTA efecto agua flameante */
-/* CTA efecto lava/fuego */
-/* --- Hero typewriter --- */
-/* HERO (solo lo mínimo necesario para el typing) */
-/*.hero-content {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.hero-content h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: #fff;
-}
-.hero-content p { color: #fff; }
-
-/* Reservamos espacio sin ocultar con ancestor hidden *
-.type-line {
-  display: block;
+/* =========================================
+   FIX DESBORDE MOBILE - SECCIÓN PUENTE E-BOOK
+========================================= */
+#infoproducto {
   position: relative;
-  visibility: visible; /* obligatorio: no ocultar por ancestros *
-  white-space: pre-wrap;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden; /* Corta cualquier desborde */
+  box-sizing: border-box;
+  padding: 4rem 1rem;
 }
 
-/* Pseudo-elemento invisible que ocupa lugar y evita salto del layout *
-.type-line::before {
-  content: attr(data-full);
-  visibility: hidden;   /* ocupa lugar pero no se ve *
-  white-space: pre-wrap;
-  display: block;
+#infoproducto .cta-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* Cursor *
-.cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  background: #fff;
-  margin-left: 6px;
-  vertical-align: -0.05em;
-  animation: blink 0.8s infinite;
-}
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+#infoproducto .cta-h2 {
+  font-size: 1.6rem; /* Achicamos un poco en mobile para que no rompa */
+  line-height: 1.3;
+  word-wrap: break-word; 
 }
 
-/* Palabra "Creativa" con degradado animado *
-.creativa {
-  display: inline-block;
-  background: linear-gradient(90deg, #ff4d4d, #ffcc00, #33ccff, #ff66ff);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: colorFlow 5s ease infinite;
-}
-@keyframes colorFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* TABLET Y DESKTOP */
+@media (min-width: 768px) {
+  #infoproducto { padding: 6rem 2rem; }
+  #infoproducto .cta-h2 { font-size: 2.2rem; }
 }
 
-/* Botón oculto al inicio y aparecerá al final *
-.btn-hero {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+/* ULTRAWIDE */
+@media (min-width: 1440px) {
+  #infoproducto { padding: 8rem 0; }
+  #infoproducto .cta-h2 { font-size: 2.8rem; }
 }
-.btn-hero.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-*/
 
 
