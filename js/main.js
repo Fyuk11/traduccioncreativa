@@ -132,3 +132,31 @@ function rotateWords() {
 
 // Repetir cada 3 segundos
 setInterval(rotateWords, 4000);
+
+
+// =========================================
+// MODAL PRE-ONBOARDING
+// =========================================
+function abrirModalCotizacion() {
+    const modal = document.getElementById('modalCotizacion');
+    modal.style.display = 'flex'; 
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+}
+
+function cerrarModalCotizacion() {
+    const modal = document.getElementById('modalCotizacion');
+    modal.classList.remove('active');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300); 
+}
+
+// Cierra el modal si el usuario hace clic en el fondo oscuro
+window.addEventListener('click', function(e) {
+    const modal = document.getElementById('modalCotizacion');
+    if (e.target === modal) {
+        cerrarModalCotizacion();
+    }
+});
