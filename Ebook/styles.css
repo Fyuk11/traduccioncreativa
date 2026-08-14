@@ -155,13 +155,27 @@ h2 {
     margin: 0 auto;
 }
 
+/* --- LOGO Y EFECTO NEÓN --- */
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
+    transition: opacity 0.3s ease;
 }
 
+.logo:hover {
+    opacity: 0.8;
+}
+
+.neon-text {
+    background: linear-gradient(90deg, #25c3fc, #c338d8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(37, 195, 252, 0.4);
+}
+
+/* --- ENLACES --- */
 .nav-links {
     list-style: none;
     display: flex;
@@ -176,28 +190,41 @@ h2 {
     transition: color 0.3s;
 }
 
-.nav-links a:hover { color: var(--secondary-neon); }
-
-.nav-cta {
-    background: var(--primary-neon);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+.nav-links a:hover { 
+    color: var(--secondary-neon); 
 }
-.nav-cta:hover { color: white !important; background: var(--primary-hover); }
 
+/* --- BOTÓN CTA --- */
+.nav-cta {
+    background: transparent;
+    color: #25c3fc !important;
+    border: 1px solid #25c3fc;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(37, 195, 252, 0.2), inset 0 0 10px rgba(37, 195, 252, 0.2);
+    transition: all 0.3s ease;
+}
+
+.nav-cta:hover { 
+    background: #25c3fc !important; 
+    color: #000 !important; 
+    box-shadow: 0 0 20px rgba(37, 195, 252, 0.6), inset 0 0 10px rgba(37, 195, 252, 0.4); 
+}
+
+/* --- MENÚ MOBILE --- */
 .hamburger {
     display: none;
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
 }
+
 .hamburger .bar {
     width: 25px;
     height: 3px;
     background-color: white;
     transition: 0.3s;
 }
-
 /* =========================================
    5. SECCIONES PRINCIPALES
 ========================================= */
@@ -645,18 +672,29 @@ h2 {
     margin-bottom: 0.2rem;
 }
 
-.neon-email {
+/* Contenedor del email para acomodar el mensaje de copiado */
+.email-container {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.neon-email-text {
     color: var(--secondary-neon);
-    text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
     transition: all 0.3s ease;
+    cursor: text; /* Muestra el cursor de texto (la rayita) */
+    user-select: all; /* ¡Magia! Un clic y se pinta todo el texto */
+    -webkit-user-select: all; /* Para Safari */
 }
 
-.neon-email:hover {
+.neon-email-text:hover {
     color: var(--text-light);
     text-shadow: 0 0 10px var(--secondary-neon);
 }
+
 
 .footer-socials {
     display: flex;
