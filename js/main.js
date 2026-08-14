@@ -24,46 +24,7 @@ const btnTop = document.querySelector(".btn-top");
 });
 
 /* typing hero */
-/*const lines = document.querySelectorAll('.type-line');
 
-lines.forEach((line, index) => {
-  const text = line.getAttribute('data-full');
-  let i = 0;
-
-  setTimeout(() => {
-    const interval = setInterval(() => {
-      line.textContent += text[i];
-      i++;
-      if (i >= text.length) {
-        clearInterval(interval);
-      }
-    }, 50); // velocidad de escritura
-  }, index * 1200); // espera entre líneas
-});
-*/
-/*
-const lines = document.querySelectorAll('.type-line');
-
-lines.forEach((line, index) => {
-  const text = line.getAttribute('data-full');
-  line.textContent = '';
-  let i = 0;
-
-  line.classList.add('typing'); // cursor
-
-  setTimeout(() => {
-    const interval = setInterval(() => {
-      line.textContent += text[i];
-      i++;
-      if (i >= text.length) {
-        clearInterval(interval);
-        line.classList.remove('typing'); // quita cursor al terminar
-      }
-    }, 50);
-  }, index * 1200); // delay entre líneas
-});
-
-*/
 const lines = document.querySelectorAll('.type-line');
 
 lines.forEach((line, index) => {
@@ -135,18 +96,19 @@ setInterval(rotateWords, 4000);
 
 
 // =========================================
-// MODAL PRE-ONBOARDING
+// LEAD MAGNET - EXIT INTENT (INTENCIÓN DE SALIDA)
 // =========================================
-function abrirModalCotizacion() {
-    const modal = document.getElementById('modalCotizacion');
+
+function abrirModalLeadMagnet() {
+    const modal = document.getElementById('modalLeadMagnet');
     modal.style.display = 'flex'; 
     setTimeout(() => {
         modal.classList.add('active');
     }, 10);
 }
 
-function cerrarModalCotizacion() {
-    const modal = document.getElementById('modalCotizacion');
+function cerrarModalLeadMagnet() {
+    const modal = document.getElementById('modalLeadMagnet');
     modal.classList.remove('active');
     setTimeout(() => {
         modal.style.display = 'none';
@@ -155,8 +117,88 @@ function cerrarModalCotizacion() {
 
 // Cierra el modal si el usuario hace clic en el fondo oscuro
 window.addEventListener('click', function(e) {
-    const modal = document.getElementById('modalCotizacion');
+    const modal = document.getElementById('modalLeadMagnet');
     if (e.target === modal) {
-        cerrarModalCotizacion();
+        cerrarModalLeadMagnet();
+    }
+});
+
+// Lógica de Exit Intent (Salta cuando el mouse va hacia la cruz del navegador)
+document.addEventListener("mouseleave", (event) => {
+    // Si el mouse sale por la parte superior de la pantalla y no mostramos el modal antes
+    if (event.clientY < 50 && !sessionStorage.getItem('leadMagnetMostrado')) {
+        abrirModalLeadMagnet();
+        // Marcamos en la sesión que ya se mostró para no ser pesados
+        sessionStorage.setItem('leadMagnetMostrado', 'true');
+    }
+});
+
+
+// =========================================
+// CONEXIÓN LEAD MAGNET -> MAKE WEBHOOK
+// =========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const formLeadMagnet = document.getElementById('lead-magnet-form');
+    const statusText = document.getElementById('lm-status');
+
+    if (formLeadMagnet) {
+        formLeadMagnet.addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+
+            // 1. Cambiamos el texto del botón para que el usuario sepa que está cargando
+            const btnSubmit = formLeadMagnet.querySelector('button[type="submit"]');
+            const textoOriginal = btnSubmit.innerText;
+            btnSubmit.innerText = "Enviando...";
+            btnSubmit.style.opacity = "0.7";
+            btnSubmit.disabled = true;
+
+            // 2. Capturamos los datos del formulario
+            const formData = new FormData(formLeadMagnet);
+            const data = {
+                nombre: formData.get('name'),
+                email: formData.get('email'),
+                origen: "Lead Magnet - Exit Intent" // Para que en Make sepas de dónde viene
+            };
+
+            // 3. Enviamos los datos al Webhook de Make
+            // REEMPLAZÁ ESTA URL POR LA DE TU WEBHOOK REAL
+            const webhookUrl = "https://hook.us2.make.com/y3odpexac2k5najin300nh11twp61r8n";
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    // ÉXITO: Mostramos mensaje verde
+                    statusText.style.color = "#4CAF50";
+                    statusText.innerText = "¡Listo! Revisá tu bandeja de entrada (y la de SPAM por las dudas).";
+                    formLeadMagnet.reset(); // Limpiamos el formulario
+                    
+                    // Cerramos el modal automáticamente después de 3 segundos
+                    setTimeout(() => {
+                        cerrarModalLeadMagnet();
+                        statusText.innerText = ""; // Limpiamos el texto
+                        btnSubmit.innerText = textoOriginal; // Restauramos el botón
+                        btnSubmit.style.opacity = "1";
+                        btnSubmit.disabled = false;
+                    }, 3500);
+                } else {
+                    throw new Error('Error en el envío');
+                }
+            })
+            .catch(error => {
+                // ERROR: Mostramos mensaje rojo
+                statusText.style.color = "#f44336";
+                statusText.innerText = "Hubo un error al enviar. Por favor, intentá de nuevo.";
+                btnSubmit.innerText = textoOriginal;
+                btnSubmit.style.opacity = "1";
+                btnSubmit.disabled = false;
+                console.error("Error capturado:", error);
+            });
+        });
     }
 });

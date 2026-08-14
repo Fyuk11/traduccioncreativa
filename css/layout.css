@@ -728,3 +728,45 @@ footer { background: #000; padding: 2rem 0 1.5rem; color: #cbd5e1; font-family: 
     z-index: 10;
   }
 }
+
+
+
+
+/* =========================================
+   BOTÓN FLOTANTE LEAD MAGNET (REGALO)
+========================================= */
+.btn-lead-magnet-float {
+  position: fixed;
+  bottom: 20px;
+  left: 15px; /* Lado opuesto al WhatsApp */
+  background: linear-gradient(135deg, #1a1a1a, #000);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  color: #d4af37;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  z-index: 990; /* Justo por debajo del modal */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-lead-magnet-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(212,175,55,0.3);
+  border-color: #d4af37;
+}
+
+/* Ajuste para que en celulares no moleste */
+@media (max-width: 768px) {
+  .btn-lead-magnet-float {
+    bottom: 20px;
+    left: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}

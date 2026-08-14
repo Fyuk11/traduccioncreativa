@@ -39,14 +39,16 @@
     <!-- Logo -->
     <a href="#" class="logo">Traducción<span>Creativa</span></a>
 
-    <!-- Links Desktop -->
-    <nav class="nav-links">
-      <a href="#hero">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#metodo">El Método</a> <!-- Acá irá el futuro Zig-Zag -->
-      <a href="/ebook/" style="color: #d4af37; font-weight: 700;">🔥 E-Book IA</a>
-      <a href="https://wa.me/1121652703?text=Hola!%20Estuve%20viendo%20la%20web%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20la%20creaci%C3%B3n%20de%20un%20Ecosistema%20Digital%20para%20mi%20marca." class="btn-nav" target="_blank">Cotizar Proyecto</a>
-    </nav>
+   <!-- Navegación Desktop -->
+<nav class="nav-links" aria-label="Navegación principal">
+  <a href="#hero">Inicio</a>
+  <a href="#servicios">Ecosistemas</a>
+  <a href="#metodo">El Método</a>
+  <!-- Enlace a la página del E-Book (Asegurate de poner la URL correcta) -->
+  <a href="/Ebook/index.html">🔥 E-Book IA</a>
+  <!-- Botón a WhatsApp -->
+  <a href="https://wa.me/1121652703?text=Hola!%20Estuve%20viendo%20la%20web%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20la%20creaci%C3%B3n%20de%20un%20Ecosistema%20Digital%20para%20mi%20marca." class="btn-nav" target="_blank">Cotizar Proyecto</a>
+</nav>
 
     <!-- Botón Hamburguesa -->
     <div class="hamburger" id="hamburger">
@@ -168,7 +170,7 @@
 
     <!-- CTA -->
     <div class="cta-center" data-aos="fade-up" data-aos-delay="400">
-      <a href="#contacto" class="btn-hero">Quiero este sistema en mi marca</a>
+      <a href="https://wa.me/1121652703?text=Hola!%20Estuve%20viendo%20la%20web%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20la%20creaci%C3%B3n%20de%20un%20Ecosistema%20Digital%20para%20mi%20marca." class="btn-hero" target="_blank">Quiero este sistema en mi marca</a>
     </div>
   </div>
 </section>
@@ -267,7 +269,7 @@
 
         <!-- CTAs -->
         <div class="cta-row">
-          <a href="#contacto" class="btn">Cotizar Proyecto</a>
+          <a href="https://wa.me/1121652703?text=Hola!%20Estuve%20viendo%20la%20web%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20la%20creaci%C3%B3n%20de%20un%20Ecosistema%20Digital%20para%20mi%20marca." class="btn" target="_blank">Cotizar Proyecto</a>
           <a href="#faqs" class="btn-secondary">Ver Privacidad</a>
         </div>
       </div>
@@ -345,7 +347,7 @@
         <h3 style="margin: 1rem 0; font-size: 1.8rem; color: #222;">Sistemas & Automatización</h3>
         <p style="color: #555; margin-bottom: 1.5rem; line-height: 1.6;">Tu web no duerme; debe trabajar por vos. Integramos formularios inteligentes y Lead Magnets conectados directamente a herramientas como <strong>Make, MailerLite o WhatsApp</strong> para nutrir a tus clientes automáticamente.</p>
         
-        <a href="#contacto" class="btn" style="margin-top: 1rem;">Empezar mi proyecto</a>
+        <a href="https://wa.me/1121652703?text=Hola!%20Estuve%20viendo%20la%20web%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20la%20creaci%C3%B3n%20de%20un%20Ecosistema%20Digital%20para%20mi%20marca." class="btn" style="margin-top: 1rem;" target="_blank">Empezar mi proyecto</a>
       </div>
     </div>
 
@@ -480,41 +482,26 @@
   </div>
 </section>
 
+
 <!-- ============================================== -->
-<!-- EL MODAL (Formulario Pre-Onboarding Oculto)    -->
+<!-- MODAL LEAD MAGNET (Exit Intent)                -->
 <!-- ============================================== -->
-<div id="modalCotizacion" class="modal-overlay" style="display: none;">
+<div id="modalLeadMagnet" class="modal-overlay" style="display: none;">
   <div class="modal-box">
-    <button onclick="cerrarModalCotizacion()" class="modal-close">&times;</button>
-    <h3 style="color: #d4af37; margin-bottom: 0.5rem; font-size: 1.5rem;">Pre-Onboarding</h3>
-    <p style="color: #555; margin-bottom: 1.5rem; font-size: 0.95rem;">Ayudanos a entender tu proyecto para cotizar con precisión.</p>
+    <button onclick="cerrarModalLeadMagnet()" class="modal-close">&times;</button>
+    <p class="section-kicker" style="margin-bottom: 0.5rem; color: #d4af37;">¡ESPERÁ UN SEGUNDO!</p>
+    <h3 style="color: #222; margin-bottom: 0.5rem; font-size: 1.5rem;">¿Te vas sin medir tus datos?</h3>
+    <p style="color: #555; margin-bottom: 1.5rem; font-size: 0.95rem;">Dejanos tu email y te mandamos una guía rápida de 3 pasos para descubrir las <strong>fugas invisibles</strong> por las que tu web actual está perdiendo ventas.</p>
     
-    <form id="qualifier-form" class="form">
-      <!-- Datos básicos -->
-      <input type="text" name="name" placeholder="Tu nombre / Marca" required />
-      <input type="email" name="email" placeholder="Email corporativo" required />
-      <input type="tel" name="phone" placeholder="WhatsApp (Opcional)" />
+    <form id="lead-magnet-form" class="form">
+      <!-- Datos básicos (Sin fricción) -->
+      <input type="text" name="name" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu mejor email" required />
       
-      <!-- Cualificación -->
-      <select name="service" required>
-        <option value="" disabled selected>¿Qué servicio buscás?</option>
-        <option value="Landing Page">Landing Page / Embudo de Ventas</option>
-        <option value="Sitio Corporativo">Sitio Web Corporativo</option>
-        <option value="Ecosistema Completo">Ecosistema Completo (+ Tracking & Make)</option>
-      </select>
-
-      <select name="budget" required>
-        <option value="" disabled selected>Rango de Presupuesto USD</option>
-        <option value="Emprendedor (Hasta $300)">Hasta $300 USD (Etapa Inicial)</option>
-        <option value="Negocio ($300 - $800)">$300 - $800 USD (Escalando)</option>
-        <option value="Corporativo (+ $800)">+ $800 USD (Líder en su nicho)</option>
-      </select>
-
-      <!-- Mensaje breve -->
-      <textarea name="details" rows="3" placeholder="Contanos brevemente tu objetivo principal..." required></textarea>
-      
-      <button type="submit" class="btn-cta" style="width: 100%; border-radius: 8px;">Enviar Solicitud</button>
-      <p id="qualifier-status" class="form-status" style="text-align: center; margin-top: 1rem;"></p>
+      <button type="submit" class="btn-cta" style="width: 100%; border-radius: 8px; margin-top: 1rem; border: none; cursor: pointer;">
+        Quiero el Diagnóstico Gratis
+      </button>
+      <p id="lm-status" class="form-status" style="text-align: center; margin-top: 1rem; font-size: 0.85rem;"></p>
     </form>
   </div>
 </div>
@@ -533,14 +520,17 @@
       </div>
 
       <!-- Navegación footer -->
-      <nav class="footer-nav" aria-label="Navegación de pie de página">
-        <a href="#hero">Inicio</a> 
-        <a href="#servicios">Ecosistema</a>
-        <a href="#metodo">El Método</a>
-        <a href="#faqs">FAQs</a>
-        <!-- Este enlace abre el modal directamente -->
-        <a href="https://wa.me/1121652703?text=Hola!%20Estuve%20viendo%20la%20web%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20la%20creaci%C3%B3n%20de%20un%20Ecosistema%20Digital%20para%20mi%20marca." class="cta-link" target="_blank">Cotizar Proyecto</a>
-      </nav>
+      <!-- Navegación Footer -->
+<nav class="footer-nav" aria-label="Navegación de pie de página">
+  <a href="#hero">Inicio</a> 
+  <a href="#servicios">Ecosistemas</a>
+  <a href="#metodo">El Método</a>
+  <a href="#faqs">FAQs</a>
+  <!-- Enlace al E-Book en el footer también suma autoridad -->
+  <a href="/ebook.html">🔥 E-Book IA</a>
+  
+  <a href="https://wa.me/1121652703?text=Hola!%20Estuve%20viendo%20la%20web%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20la%20creaci%C3%B3n%20de%20un%20Ecosistema%20Digital%20para%20mi%20marca." class="cta-link" target="_blank">Cotizar Proyecto</a>
+</nav>
 
       <!-- Redes sociales (Con íconos SVG limpios) -->
       <div class="redes" aria-label="Redes sociales">
@@ -586,6 +576,11 @@
     <path d="M12 2L4 10h5v8h6v-8h5L12 2z"/>
   </svg>
 </a>
+
+<!-- BOTÓN FLOTANTE LEAD MAGNET (Abajo a la izquierda) -->
+<button onclick="abrirModalLeadMagnet()" class="btn-lead-magnet-float" aria-label="Descargar Recurso Gratis">
+  🎁 Recurso Gratis
+</button>
 
 
   <!-- Libs externas -->
