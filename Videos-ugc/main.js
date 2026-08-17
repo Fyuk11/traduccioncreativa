@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. FORZAR INICIO DESDE ARRIBA AL ACTUALIZAR LA PÁGINA
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual'; // Evita que el navegador recuerde el scroll anterior
+    }
+    window.scrollTo(0, 0); // Manda la ventana arriba de todo al cargar
+
     // 1. MENÚ HAMBURGUESA
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -20,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. PAUSA INTELIGENTE (Para videos con audio)
     // Si el usuario scrollea y el video desaparece de la pantalla, lo pausamos automáticamente
-    // para que no siga sonando de fondo.
     const explainerVideos = document.querySelectorAll('.explainer-video');
     
     if ('IntersectionObserver' in window) {
