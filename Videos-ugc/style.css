@@ -118,28 +118,79 @@ ul.nav-links { list-style: none; padding: 0; margin: 0; }
    4. CARRUSEL UGC
 ========================================= */
 .ugc-marquee-section { padding: 4rem 0 6rem 0; position: relative; }
+
 .marquee-wrapper {
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     width: 100%;
+    /* Permite scrollear la página hacia abajo si tocan el carrusel, pero anula gestos horizontales raros */
+    touch-action: pan-y; 
 }
+
 .marquee-container { 
     display: flex; gap: 1.5rem; overflow: hidden; margin-top: 2rem; padding: 1rem 0; 
 }
-.marquee-group { display: flex; gap: 1.5rem; flex-shrink: 0; animation: scroll-marquee 25s linear infinite; }
+
+.marquee-group { 
+    display: flex; 
+    gap: 1.5rem; 
+    flex-shrink: 0; 
+    animation: scroll-marquee 25s linear infinite; 
+    
+    /* MAGIA PARA MOBILE: Aceleración por hardware (GPU) */
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
 
 .marquee-vid { 
-    width: 180px; min-width: 180px; height: 320px; object-fit: cover; border-radius: 16px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08); outline: 2px solid transparent; 
+    width: 180px; 
+    min-width: 180px; 
+    height: 320px; 
+    object-fit: cover; 
+    border-radius: 16px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+    outline: 2px solid transparent; 
     transition: transform 0.3s ease, outline 0.3s ease, box-shadow 0.3s ease; 
-}
-.marquee-vid:hover { 
-    transform: scale(1.04); outline: 3px solid var(--brand-color); outline-offset: 3px; 
-    box-shadow: 0 15px 30px rgba(107, 163, 200, 0.3);
+    
+    /* Previene destellos en los bordes de los videos durante el movimiento */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    
+    /* Evita que el usuario seleccione el video sin querer */
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none; /* Desactiva toques en móvil por defecto */
 }
 
-@keyframes scroll-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-100% - 1.5rem)); } }
+/* El hover SOLO se aplica si el dispositivo usa mouse (PC), así en celu no se traba si lo tocan */
+@media (hover: hover) {
+    .marquee-vid {
+        pointer-events: auto; /* Reactiva el mouse en PC */
+    }
+    .marquee-vid:hover { 
+        transform: scale(1.04) translateZ(0); 
+        outline: 3px solid var(--brand-color); 
+        outline-offset: 3px; 
+        box-shadow: 0 15px 30px rgba(107, 163, 200, 0.3);
+    }
+}
 
+/* Ajuste para que en celu la animación vaya un poco más lento y se vea súper fluida */
+@media (max-width: 768px) {
+    .marquee-group {
+        animation-duration: 35s; 
+    }
+}
+
+/* Forzamos el uso del eje Z (3D) en los keyframes para que no abandone la GPU */
+@keyframes scroll-marquee { 
+    0% { transform: translateX(0) translateZ(0); } 
+    100% { transform: translateX(calc(-100% - 1.5rem)) translateZ(0); } 
+}
 /* =========================================
    5. SECCIONES Y PRECIOS
 ========================================= */
