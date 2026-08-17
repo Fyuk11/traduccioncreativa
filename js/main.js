@@ -165,9 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // 2. Capturamos los datos del formulario
             const formData = new FormData(formLeadMagnet);
             const data = {
-                nombre: formData.get('name'),
-                email: formData.get('email'),
-                origen: "Lead Magnet - Exit Intent" // Para que en Make sepas de dónde viene
+                name: formData.get('name'),    // Cambiado de 'nombre' a 'name'
+                email: formData.get('email'),  // Esto ya estaba bien
+                origen: "Lead Magnet - Exit Intent"
             };
 
             // 3. Enviamos los datos al Webhook de Make
