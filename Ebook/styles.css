@@ -153,6 +153,14 @@ h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; }
 .zigzag-row { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 4rem; align-items: center; }
 .zigzag-img { width: 100%; min-height: 250px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); }
 .zigzag-text h3 { color: var(--secondary-neon); margin-bottom: 1rem; }
+/* Estilos para las imágenes del Zig-Zag del E-book */
+.ebook-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px; /* Ajustá este número si querés los bordes más o menos curvos */
+    object-fit: cover;
+}
 
 /* --- Resultados --- */
 .results-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
