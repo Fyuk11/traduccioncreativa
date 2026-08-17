@@ -96,11 +96,24 @@ setInterval(rotateWords, 4000);
 
 
 // =========================================
-// LEAD MAGNET - EXIT INTENT (INTENCIÓN DE SALIDA)
+// LEAD MAGNET - EXIT INTENT & CLIC MANUAL
 // =========================================
 
-function abrirModalLeadMagnet() {
+// La función ahora recibe un parámetro ('exit' o 'manual')
+function abrirModalLeadMagnet(tipo) {
     const modal = document.getElementById('modalLeadMagnet');
+    const modalKicker = document.getElementById('modal-kicker');
+    const modalTitle = document.getElementById('modal-title');
+
+    // Cambiamos los textos según cómo se abrió el modal
+    if (tipo === 'exit') {
+        modalKicker.innerText = "¡ESPERÁ UN SEGUNDO!";
+        modalTitle.innerText = "¿Te vas sin medir tus datos?";
+    } else if (tipo === 'manual') {
+        modalKicker.innerText = "RECURSO GRATUITO";
+        modalTitle.innerText = "Descubrí las fugas invisibles de tu web";
+    }
+
     modal.style.display = 'flex'; 
     setTimeout(() => {
         modal.classList.add('active');
@@ -123,16 +136,13 @@ window.addEventListener('click', function(e) {
     }
 });
 
-// Lógica de Exit Intent (Salta cuando el mouse va hacia la cruz del navegador)
+// 1. Lógica de Exit Intent (Salta cuando el mouse va hacia la cruz del navegador)
 document.addEventListener("mouseleave", (event) => {
-    // Si el mouse sale por la parte superior de la pantalla y no mostramos el modal antes
     if (event.clientY < 50 && !sessionStorage.getItem('leadMagnetMostrado')) {
-        abrirModalLeadMagnet();
-        // Marcamos en la sesión que ya se mostró para no ser pesados
+        abrirModalLeadMagnet('exit'); // Lo abrimos en modo "escape"
         sessionStorage.setItem('leadMagnetMostrado', 'true');
     }
 });
-
 
 // =========================================
 // CONEXIÓN LEAD MAGNET -> MAKE WEBHOOK

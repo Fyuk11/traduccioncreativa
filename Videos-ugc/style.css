@@ -3,11 +3,11 @@
 ========================================= */
 :root {
     --bg-light: #ffffff; 
-    --bg-alt: #f1f6fa; /* Platino un poquito más marcado */
+    --bg-alt: #f1f6fa; 
     --bg-card: #ffffff;
     --text-main: #0b1320; 
     --text-muted: #5c6e7e;
-    --brand-color: #6ba3c8; /* Celeste Platinado */
+    --brand-color: #6ba3c8; 
     --brand-light: #d6e8f5; 
     --brand-dark: #3e7399; 
 }
@@ -23,7 +23,7 @@ body {
     position: relative;
 }
 
-/* --- AMBIENT BACKGROUND (Auras de Pintura Animadas) --- */
+/* --- AMBIENT BACKGROUND --- */
 .ambient-background {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     z-index: -1; overflow: hidden; filter: blur(60px);
@@ -46,11 +46,11 @@ body {
 .wave-divider { position: absolute; left: 0; width: 100%; overflow: hidden; line-height: 0; }
 .wave-bottom { bottom: -1px; transform: rotate(180deg); }
 .wave-top { top: -1px; }
-.wave-divider svg { display: block; width: calc(100% + 1.3px); height: 80px; } /* Más altas para que se noten bien */
+.wave-divider svg { display: block; width: calc(100% + 1.3px); height: 80px; } 
 .wave-divider .shape-fill { fill: var(--bg-alt); }
 .wave-white .shape-fill { fill: var(--bg-light); }
 
-/* --- TEXTOS --- */
+/* --- TEXTOS GENERALES --- */
 .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 .text-center { text-align: center; }
 
@@ -59,7 +59,6 @@ h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #111; letter-spacing: -0.02e
 h3 { font-size: 1.6rem; margin-bottom: 1rem; color: #222; }
 p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
 
-/* Gradiente limpio y fuerte, chau subrayado */
 .text-gradient {
     background: linear-gradient(135deg, var(--brand-dark), var(--brand-color));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -114,7 +113,7 @@ ul.nav-links { list-style: none; padding: 0; margin: 0; }
 .explainer-video { width: 100%; height: 100%; object-fit: cover; background-color: #eaf2f8; }
 
 /* =========================================
-   4. CARRUSEL UGC (BUG FIX DEFINITIVO)
+   4. CARRUSEL UGC
 ========================================= */
 .ugc-marquee-section { padding: 4rem 0 6rem 0; position: relative; }
 .marquee-wrapper {
@@ -127,7 +126,6 @@ ul.nav-links { list-style: none; padding: 0; margin: 0; }
 }
 .marquee-group { display: flex; gap: 1.5rem; flex-shrink: 0; animation: scroll-marquee 25s linear infinite; }
 
-/* EL ARREGLO ESTÁ ACÁ (min-width: 180px obliga al navegador a no colapsar antes de cargar el video) */
 .marquee-vid { 
     width: 180px; min-width: 180px; height: 320px; object-fit: cover; border-radius: 16px; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.08); outline: 2px solid transparent; 
@@ -145,17 +143,15 @@ ul.nav-links { list-style: none; padding: 0; margin: 0; }
 ========================================= */
 section { padding: 6rem 0; position: relative; }
 
-/* --- EL HERO CON PULSO DIAGONAL ANIMADO (POTENCIADO) --- */
+/* --- HERO --- */
 .hero-section { 
     padding-top: 11rem; 
     padding-bottom: 8rem; 
     position: relative;
     overflow: hidden; 
-    /* Tinte base permanente: mata el blanco puro y le da un tono celeste hielo */
     background: linear-gradient(135deg, #e8f2f9 0%, #ffffff 100%);
 }
 
-/* Capa Animada: La ola del pulso más brillante y notoria */
 .hero-section::after {
     content: '';
     position: absolute;
@@ -163,32 +159,23 @@ section { padding: 6rem 0; position: relative; }
     background: linear-gradient(to top right, 
         transparent 10%, 
         rgba(107, 163, 200, 0.25) 35%, 
-        rgba(107, 163, 200, 0.75) 50%, /* Núcleo de luz platinada intenso */
+        rgba(107, 163, 200, 0.75) 50%, 
         rgba(107, 163, 200, 0.25) 65%, 
         transparent 90%
     );
     background-size: 300% 300%;
     z-index: 0;
-    /* Duración de 5s para que sea más dinámico */
     animation: diagonalPulse 5s ease-in-out infinite alternate; 
 }
 
 @keyframes diagonalPulse {
-    0% {
-        background-position: 0% 100%; 
-        opacity: 0.4; /* Ya se nota un montón desde el segundo cero */
-    }
-    100% {
-        background-position: 100% 0%; 
-        opacity: 1; /* Brillo máximo al llegar a la esquina superior */
-    }
+    0% { background-position: 0% 100%; opacity: 0.4; }
+    100% { background-position: 100% 0%; opacity: 1; }
 }
 
-/* Elevamos el contenido por encima de la animación */
 .hero-content, .wave-divider { position: relative; z-index: 2; }
 .hero-text { margin-bottom: 3rem; text-align: center; }
 
-/* Aura fuerte detrás del video */
 .hero-video { flex: 1; display: flex; justify-content: center; position: relative; z-index: 2; }
 .hero-video::before {
     content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -243,12 +230,18 @@ section { padding: 6rem 0; position: relative; }
 .social-link { color: var(--text-main); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid rgba(107, 163, 200, 0.2); box-shadow: 0 4px 10px rgba(107, 163, 200, 0.05); transition: all 0.3s ease; }
 .social-link:hover { color: #fff; background: var(--brand-color); border-color: var(--brand-color); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(107, 163, 200, 0.3); }
 
-/* RESPONSIVE */
+/* =========================================
+   7. MEDIA QUERIES (ESCALADO HACIA ARRIBA)
+========================================= */
+
 @media (min-width: 768px) {
     h1 { font-size: 4rem; }
     .hamburger { display: none; }
     .nav-links { display: flex !important; flex-direction: row; position: static; background: transparent; padding: 0; border: none; align-items: center; gap: 2.5rem; }
+    
     .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    .grid-2-cols { grid-template-columns: repeat(2, 1fr); max-width: 850px; margin: 0 auto; }
+    
     .footer-content { flex-direction: row; justify-content: space-between; text-align: left; }
 }
 
@@ -262,4 +255,3 @@ section { padding: 6rem 0; position: relative; }
     .zz-text { text-align: left;}
     .number { text-align: left; }
 }
-

@@ -485,13 +485,16 @@
 
 
 <!-- ============================================== -->
-<!-- MODAL LEAD MAGNET (Exit Intent)                -->
+<!-- MODAL LEAD MAGNET (Exit Intent & Manual)       -->
 <!-- ============================================== -->
 <div id="modalLeadMagnet" class="modal-overlay" style="display: none;">
   <div class="modal-box">
     <button onclick="cerrarModalLeadMagnet()" class="modal-close">&times;</button>
-    <p class="section-kicker" style="margin-bottom: 0.5rem; color: #d4af37;">¡ESPERÁ UN SEGUNDO!</p>
-    <h3 style="color: #222; margin-bottom: 0.5rem; font-size: 1.5rem;">¿Te vas sin medir tus datos?</h3>
+    
+    <!-- Agregamos los IDs acá para poder inyectarles texto dinámico -->
+    <p id="modal-kicker" class="section-kicker" style="margin-bottom: 0.5rem; color: #d4af37;">¡ESPERÁ UN SEGUNDO!</p>
+    <h3 id="modal-title" style="color: #222; margin-bottom: 0.5rem; font-size: 1.5rem;">¿Te vas sin medir tus datos?</h3>
+    
     <p style="color: #555; margin-bottom: 1.5rem; font-size: 0.95rem;">Dejanos tu email y te mandamos una guía rápida de 3 pasos para descubrir las <strong>fugas invisibles</strong> por las que tu web actual está perdiendo ventas.</p>
     
     <form id="lead-magnet-form" class="form">
@@ -579,7 +582,7 @@
 </a>
 
 <!-- BOTÓN FLOTANTE LEAD MAGNET (Abajo a la izquierda) -->
-<button onclick="abrirModalLeadMagnet()" class="btn-lead-magnet-float" aria-label="Descargar Recurso Gratis">
+<button onclick="abrirModalLeadMagnet('manual')" class="btn-lead-magnet-float" aria-label="Descargar Recurso Gratis">
   🎁 Recurso Gratis
 </button>
 
