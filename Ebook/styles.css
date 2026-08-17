@@ -187,8 +187,24 @@ h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; }
 .price-box { text-align: center; margin-bottom: 2rem; }
 .price-original { color: #888; font-size: 1rem; margin-bottom: 0.2rem; }
 .price-original span { text-decoration: line-through; }
-.price-today { font-size: 2rem; color: #fff; }
-.neon-text-cyan { color: #00E5FF; text-shadow: 0 0 15px rgba(0, 229, 255, 0.4); font-size: 2.5rem; }
+
+/* FIX MOBILE: Apilamos el texto y evitamos que se corte el USD */
+.price-today { 
+    font-size: 1.4rem; 
+    color: #fff; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.neon-text-cyan { 
+    color: #00E5FF; 
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.4); 
+    font-size: 2.8rem; 
+    white-space: nowrap; /* Mantiene "$15 USD" junto */
+    line-height: 1;
+}
 
 .btn-neon-pulse { background: #7B2CBF; color: #fff; font-weight: 800; font-size: 1.1rem; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 12px; width: 100%; text-align: center; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(123, 44, 191, 0.5); animation: pulse-purple 2s infinite; margin-bottom: 2rem; }
 .btn-neon-pulse:hover { background: #9d4edd; transform: translateY(-3px); box-shadow: 0 0 30px rgba(157, 78, 221, 0.7); }
@@ -282,6 +298,15 @@ h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; }
     /* Flotante */
     .floating-btn { bottom: 30px; right: 30px; padding: 12px 20px; }
     .floating-text { display: inline-block; font-weight: bold; font-size: 1rem; }
+
+    /* Oferta / Precio (Restauramos diseño horizontal) */
+    .price-today { 
+        flex-direction: row; 
+        align-items: baseline; 
+        justify-content: center; /* En PC lo centramos bien */
+        font-size: 2rem; 
+        gap: 15px; 
+    }
 }
 
 /* --- DESKTOP GRANDE (Para la oferta) --- */
